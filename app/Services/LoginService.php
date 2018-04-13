@@ -18,6 +18,9 @@ class LoginService
         ];
         $response = GuzzleHttpService::processCall( '/oauth/token', 'POST', $form_params );
         $auth = json_decode((string)$response->getBody());
+        if(isset($auth->error)) {
+            return $auth;
+        }
         session(['access_token' => $auth->access_token]);
         return true;
 
