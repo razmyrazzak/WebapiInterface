@@ -32,8 +32,8 @@ class HomeController extends Controller
         ]);
 
         $service = LoginService::doLogin($request);
-        if( isset($service->error) ){
-            return redirect('loginShow')->withErrors( $service->message );
+        if( is_null($service)){
+            return redirect('loginShow')->withErrors( 'something went wrong' );
         }
         elseif($service){
             return redirect('pensionPage');
