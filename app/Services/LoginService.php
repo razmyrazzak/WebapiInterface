@@ -17,8 +17,11 @@ class LoginService
             'scope'=> '*',
         ];
         $response = GuzzleHttpService::processCall( '/oauth/token', 'POST', $form_params );
-        if( $response ->getStatusCode() == 500 || $response ->getStatusCode() == 401 ){
-            return null;
+        if( $response ->getStatusCode() == 500 ){
+            return ['code' => $response ->getStatusCode(), 'msg' => 'Server Error please Contact admin' ];
+        }
+        elseif ($response ->getStatusCode() == 401 ){
+            return ['code' => $response ->getStatusCode(), 'msg' => 'Email or Password not found' ];
         }
         $auth = json_decode((string)$response->getBody());
         session(['access_token' => $auth->access_token]);
