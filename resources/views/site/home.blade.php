@@ -1,4 +1,3 @@
-
 <div id="home" class="welcome-slider-area ">
     <div class="slider-active owl-carousel">
         <div class="single-slider" style="background-image:url({{url('images/slider/slider-1.jpg')}})">

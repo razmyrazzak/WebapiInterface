@@ -54,7 +54,7 @@ class GuzzleHttpService
 
         }
         catch (\GuzzleHttp\Exception\BadResponseException $e){
-            return 'Something went wrong';
+            return $e->getResponse();
         }
 
     }

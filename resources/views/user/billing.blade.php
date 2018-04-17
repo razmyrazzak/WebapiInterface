@@ -16,6 +16,26 @@
                 <i class="fa fa-area-chart"></i>Purchased Subscriptions
             </div>
             <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Payment Status</th>
+                            <th>Price</th>
+                            <th>Payed</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{$payment->service->name}}</td>
+                            <td>{{$payment->payment[0]->status}}</td>
+                            <td>{{$payment->service->price}}</td>
+                            <td>{{ date('F d, Y', strtotime($payment->payment[0]->created_at)) }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
             <div class="card-footer small text-muted"></div>

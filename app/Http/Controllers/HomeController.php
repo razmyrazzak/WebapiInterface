@@ -40,9 +40,13 @@ class HomeController extends Controller
         }
     }
 
-    public function pensionPage ()
+    public function pensionPage()
     {
         $user = UserService::getUserDetails();
+        if( isset($user->message) ){
+            session()->flush();
+            return redirect('loginShow');
+        }
         return view( 'user.index' )->with('user',$user);
     }
 

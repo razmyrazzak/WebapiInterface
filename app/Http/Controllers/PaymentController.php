@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\PaymentService;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -17,7 +18,11 @@ class PaymentController extends Controller
     }
 
     public function showBilling(){
-        $payments = 'no';
-        return view('user.billing');
+        $payment = UserService::getUserPayment();
+        if( isset($payment->message) ){
+            session()->flush();
+            return redirect('loginShow');
+        }
+        return view('user.billing')->with('payment' , $payment);
     }
 }

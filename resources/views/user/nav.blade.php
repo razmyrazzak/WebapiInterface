@@ -6,6 +6,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+                <a class="nav-link" href="{{ URL::to('pensionPage') }}">
+                    <i class="fa fa-fw fa-history"></i>Home</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ URL::to('showBilling') }}">
                     <i class="fa fa-fw fa-history"></i>Billing</a>
             </li>

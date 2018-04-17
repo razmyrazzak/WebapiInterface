@@ -31,6 +31,33 @@ class UserController extends Controller
             return redirect('editUser');
         }
         return redirect('editUser')->withErrors(array('user' => 'Something went wrong.'));
+    }
+
+    public function registerUser( Request $request ){
+        $validator  = $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'dni' => 'required',
+            'cuil' => 'required',
+            'email' => 'email|required',
+            'profession' => 'required',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required|min:8'
+        ]);
+        $data = [
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'dni' => $request->input('last_name'),
+            'cuil' => $request->input('cuil'),
+            'profession' => $request->input('profession'),
+            'password' => $request->input('password'),
+        ];
+        $user = UserService::registerUser( $data );
+        if( isset($user->error) ){
+            return redirect('/')->withErrors( $user->message );
+        }
+        return redirect('/')->with('status', 'User created please Activate your account');;
 
     }
 

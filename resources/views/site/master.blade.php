@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{url('front-end/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('front-end/assets/css/responsive.css')}}">
     <link rel="stylesheet" href="{{url('back-end/vendor/bootstrap-toastr/toastr.css')}}">
+    <link href="{{url('css/sb-admin.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
     <link rel="icon" href="{{url('front-end/assets/images/header/favicon.png')}}">
     <link rel="apple-touch-icon" href="{{url('front-end/assets/img/template/apple-touch-icon.png')}}">
@@ -54,7 +55,7 @@
 <script src="{{url('back-end/vendor/bootstrap-toastr/toastr.min.js')}}"></script>
 <script src="{{url('back-end/vendor/bootstrap-toastr/toastr.min.js')}}"></script>
 <script src="{{url('back-end/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-<link href="{{url('css/sb-admin.css')}}" rel="stylesheet">
+<script src="{{url('js/custom.js')}}"></script>
 <script type="text/javascript">
     $('.video-active').mb_YTPlayer();</script>
 <script src="{{url('front-end/assets/js/custom.js')}}"></script>

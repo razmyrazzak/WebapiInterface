@@ -1,6 +1,5 @@
 @extends('site.master')
 @section('content')
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -16,22 +15,21 @@
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#about-us">About Us</a></li>
                     <li><a href="{{ URL::to('loginShow') }}">Login</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#registerModaltest">Register</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    @if (session('status'))
-        <div id="success" class="alert alert-success userConfirmation">
-            {{ session('status') }}
-        </div>
-    @endif
+
     @include('site.home')
     @include('site.calculatePension')
     @include('site.ourService')
     @include('site.ourClients')
     @include('site.faq')
     @include('site.aboutUs')
+    @include('site.footer')
+    @include('site.registerMpdel')
+
     @include('site.footer')
     @include('site.registerMpdel')
 

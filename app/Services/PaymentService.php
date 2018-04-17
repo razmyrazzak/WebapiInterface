@@ -28,4 +28,17 @@ class PaymentService
         return $user;
     }
 
+    public static function getPenstion( $request ){
+        $access_token = session('access_token');
+        $form_params = [
+            'aftp' => $request->aftp,
+        ];
+        $response = GuzzleHttpService::processCall( '/api/getPension?'.http_build_query( $form_params ), 'GET' , null, $access_token );
+        $pension = json_decode((string)$response->getBody());
+        if(isset($pension->error)) {
+            return $pension;
+        }
+        return $pension ;
+    }
+
 }

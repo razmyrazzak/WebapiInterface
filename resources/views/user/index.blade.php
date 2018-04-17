@@ -27,13 +27,17 @@
             <i class="fa fa-area-chart"></i>Calulated Pension
         </div>
         <div class="card-body">
-            {{--{{var_dump($user)}}--}}
             @if( !$user->latestpayment )
                 <div class="alert alert-info">
                     <strong>Info!</strong> Currently you don't  have any Subscriptions Please buy Calculate Pension
                 </div>
+            @elseif(  session('pension') )
+                <div class="alert alert-success">
+                    <label>Pension Amount:</label>
+                    <strong>{{session('pension')}}</strong>
+                </div>
             @endif
-            <button type="button" @if( !$user->latestpayment ) disabled @endif class="btn btn-primary">Primary</button>
+            <a  @if( !$user->latestpayment ) disabled @endif data-toggle="modal" data-target="#pensionModel" class="btn btn-primary" role="button">Calculate Pension</a>
 
         </div>
         <div class="card-footer small text-muted">
@@ -42,5 +46,5 @@
     </div>
 </div>
 
-{{--@include('user.userEditModel')--}}
+@include('user.pensionModel')
 @endsection

@@ -222,7 +222,17 @@
     });
     // user Edit model errors
     if ($('#userModal .text-danger')[0] ){
-        $("#userModal").modal("show")
+        $("#userModal").modal("show");
     }
+    if ($('#pensionModel .text-danger')[0] ){
+        $("#pensionModel").modal("show");
+    }
+    if ($('#registerModaltest .text-danger')[0] ){
+        $("#registerModaltest").modal("show");
+        $("#registerModaltest").addClass("in");
+        $("#registerModaltest").css('display', 'block');
+    }
+
+    $( "#success" ).fadeOut( 3000 );
 
 })(jQuery);
