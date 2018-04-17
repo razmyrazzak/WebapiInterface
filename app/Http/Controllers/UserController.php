@@ -53,11 +53,14 @@ class UserController extends Controller
             'profession' => $request->input('profession'),
             'password' => $request->input('password'),
         ];
-        $user = UserService::registerUser( $data );
-        if( isset($user->error) ){
-            return redirect('/')->withErrors( $user->message );
+        $response = UserService::registerUser( $data );
+        if( isset($response->error) ){
+            return view('activation.index')->with('error','Something went wrong Please try Again');
         }
-        return redirect('/')->with('status', 'User created please Activate your account');;
+        if(  env('APP_ENV') == 'local' ){
+            return view('activation.index')->with('msg','User created please Activate your account')->with('local', $response->token);
+        }
+        return view('activation.index')->with('msg','User created please Activate your account');
 
     }
 

@@ -11,8 +11,6 @@
 |
 */
 
-
-
 //
 Route::get('/', 'HomeController@index');
 
@@ -23,7 +21,7 @@ Route::post('doLogin', 'HomeController@doLogin');
 Route::post('registerUser', 'UserController@registerUser');
 //activation
 Route::get('confirmationMsg', 'ActivationController@confirmationMsg');
-Route::get('doActivation', 'ActivationController@doActivation');
+Route::get('doActivation/{activation_hash}', 'ActivationController@doActivation');
 Route::get('showRestForm', 'ActivationController@showRestForm');
 Route::post('doReset', 'ActivationController@doReset');
 

@@ -39,12 +39,12 @@
                     <div class="form-group">
                         <label for="register-email">Password</label>
                         <small class="{{ $errors->has('password') ? ' text-danger' : '' }}">{{ $errors->first('password') }}</small>
-                        {!! Form::text( 'password', null, array( 'class' => 'form-control','placeholder' => 'Enter Password' ) ) !!}
+                        {!! Form::password( 'password', array( 'class' => 'form-control','placeholder' => 'Enter Password' ) ) !!}
                     </div>
                     <div class="form-group">
                         <label for="register-email">Re-type your password</label>
                         <small class="{{ $errors->has('password_confirmation') ? ' text-danger' : '' }}">{{ $errors->first('password_confirmation') }}</small>
-                        {!! Form::text( 'password_confirmation', null, array( 'class' => 'form-control','placeholder' => 'Enter Confirm Password' ) ) !!}
+                        {!! Form::password( 'password_confirmation',  array( 'class' => 'form-control','placeholder' => 'Enter Confirm Password' ) ) !!}
                     </div>
                 {!! Form::submit( 'Submit', array( 'class'=>'btn btn-primary' ) ) !!}
                 {!! Form::close() !!}

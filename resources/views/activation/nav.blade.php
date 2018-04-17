@@ -6,6 +6,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+                <a class="nav-link" href="{{ URL::to('/') }}">
+                    <i class="fa fa-fw fa-home"></i>Home</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ URL::to('loginShow') }}">
                     <i class="fa fa-fw fa-sign-in"></i>Login</a>
             </li>
