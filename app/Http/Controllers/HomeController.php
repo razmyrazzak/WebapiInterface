@@ -43,11 +43,12 @@ class HomeController extends Controller
     public function pensionPage()
     {
         $user = UserService::getUserDetails();
+        $services = SubscribeServices::getAllSubs();
         if( isset($user->message) ){
             session()->flush();
             return redirect('loginShow');
         }
-        return view( 'user.index' )->with('user',$user);
+        return view( 'user.index' )->with('user',$user)->with('service', $services);
     }
 
     public function logout()

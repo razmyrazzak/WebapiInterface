@@ -44,6 +44,26 @@
             <a href="{{ URL::to('showSubscription') }}" class="btn btn-info" role="button">Buy Subscription</a>
         </div>
     </div>
+
+    {{--<div class="row">--}}
+        {{--<div class="col-xl-3 col-sm-6 mb-3">--}}
+            {{--<div class="card text-white card-colour-Greens o-hidden h-100">--}}
+                {{--<div class="card-body">--}}
+                    {{--<div class="card-body-icon">--}}
+                        {{--<i class="fa fa-fw fa-fw fa-list"></i>--}}
+                    {{--</div>--}}
+                    {{--<div class="card_details">--}}
+                        {{--<h2>test</h2>--}}
+                        {{--<p>tes</p>--}}
+                        {{--<p>test</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<a class="card-footer card-buy text-white clearfix small z-1" href="#">--}}
+                    {{--<span class="byt-btn">Buy</span>--}}
+                {{--</a>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 </div>
 
 @include('user.pensionModel')
