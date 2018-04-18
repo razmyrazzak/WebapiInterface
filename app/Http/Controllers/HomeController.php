@@ -44,11 +44,12 @@ class HomeController extends Controller
     {
         $user = UserService::getUserDetails();
         $services = SubscribeServices::getAllSubs();
+        $subs = SubscribeServices::getAllSubs();
         if( isset($user->message) ){
             session()->flush();
             return redirect('loginShow');
         }
-        return view( 'user.index' )->with('user',$user)->with('service', $services);
+        return view( 'user.index' )->with('user',$user)->with('service', $services)->with('subs', $subs);
     }
 
     public function logout()

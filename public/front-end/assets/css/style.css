@@ -1901,3 +1901,10 @@ margin-top: 30px;
     margin-top: 82px;
     margin-bottom: 50px;
 }
+
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+}

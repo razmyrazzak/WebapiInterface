@@ -21,7 +21,7 @@ class LoginService
             return ['code' => $response ->getStatusCode(), 'msg' => 'Server Error please Contact admin' ];
         }
         elseif ($response ->getStatusCode() == 401 ){
-            return ['code' => $response ->getStatusCode(), 'msg' => 'Email or Password not found' ];
+            return ['code' => $response ->getStatusCode(), 'msg' => $response->getReasonPhrase() ];
         }
         $auth = json_decode((string)$response->getBody());
         session(['access_token' => $auth->access_token]);

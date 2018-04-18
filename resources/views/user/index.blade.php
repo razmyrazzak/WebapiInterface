@@ -37,33 +37,21 @@
                     <strong>{{session('pension')}}</strong>
                 </div>
             @endif
-            <a  @if( !$user->latestpayment ) disabled @endif data-toggle="modal" data-target="#pensionModel" class="btn btn-primary" role="button">Calculate Pension</a>
-
+                @if( count( $user->latestpayment ) == 0 )
+                    <a class="btn btn-primary disabled" role="button">Calculate Pension</a>
+                @else
+                    <a data-toggle="modal" data-target="#pensionModel" class="btn btn-primary disabled" role="button">Calculate Pension</a>
+                @endif
         </div>
         <div class="card-footer small text-muted">
             <a href="{{ URL::to('showSubscription') }}" class="btn btn-info" role="button">Buy Subscription</a>
         </div>
     </div>
 
-    {{--<div class="row">--}}
-        {{--<div class="col-xl-3 col-sm-6 mb-3">--}}
-            {{--<div class="card text-white card-colour-Greens o-hidden h-100">--}}
-                {{--<div class="card-body">--}}
-                    {{--<div class="card-body-icon">--}}
-                        {{--<i class="fa fa-fw fa-fw fa-list"></i>--}}
-                    {{--</div>--}}
-                    {{--<div class="card_details">--}}
-                        {{--<h2>test</h2>--}}
-                        {{--<p>tes</p>--}}
-                        {{--<p>test</p>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<a class="card-footer card-buy text-white clearfix small z-1" href="#">--}}
-                    {{--<span class="byt-btn">Buy</span>--}}
-                {{--</a>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+    <div class="row">
+        @foreach( $subs as $sub)
+            @include('user.card')
+        @endforeach
 </div>
 
 @include('user.pensionModel')

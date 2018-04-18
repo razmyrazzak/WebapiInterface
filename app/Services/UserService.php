@@ -43,7 +43,6 @@ class UserService
     }
 
     public static function registerUser( $request ){
-        $access_token = session('access_token');
         $form_params = [
             'first_name' => $request['first_name'],
             'last_name' => $request['last_name'],
@@ -54,7 +53,7 @@ class UserService
             'password' => $request['password'],
             'client_url'=> url('doActivation')
         ];
-        $response = GuzzleHttpService::processCall( '/api/store', 'POST' , $form_params, $access_token );
+        $response = GuzzleHttpService::processCall( '/api/store', 'POST' , $form_params, null );
         $user = json_decode((string)$response->getBody());
         if(isset($user->error)) {
             return $user;
@@ -65,11 +64,18 @@ class UserService
     public static function getUserPayment(){
         $access_token = session('access_token');
         $response = GuzzleHttpService::processCall( '/api/getLatestPayment', 'GET' , null, $access_token );
-        $payment = json_decode((string)$response->getBody());
-        if(isset($payment->message)){
-            return $payment;
+        if( $response ->getStatusCode() == 500 ){
+            return ['code' => $response ->getStatusCode(), 'msg' => 'Server Error please Contact admin' ];
         }
-        return $payment ;
+        elseif ($response ->getStatusCode() == 401 ){
+            return ['code' => $response ->getStatusCode(), 'msg' => $response->getReasonPhrase() ];
+        }
+        if( $response ){
+            $response = json_decode((string)$response->getBody());
+            return $response ;
+        }
+        return $response;
+
 
     }
 

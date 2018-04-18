@@ -27,14 +27,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>{{$payment->service->name}}</td>
-                            <td>{{$payment->payment[0]->status}}</td>
-                            <td>{{$payment->service->price}}</td>
-                            <td>{{ date('F d, Y', strtotime($payment->payment[0]->created_at)) }}</td>
-                        </tr>
+                        @if(isset($payment))
+                            <tr>
+                                <td>{{$payment->service->name}}</td>
+                                <td>{{$payment->payment[0]->status}}</td>
+                                <td>{{$payment->service->price}}</td>
+                                <td>{{ date('F d, Y', strtotime($payment->payment[0]->created_at)) }}</td>
+                            </tr>
+                        @endif
                         </tbody>
                     </table>
+                    @if(isset( $error ))
+                        <div class="alert alert-info">{{$error}}</div>
+                    @endif
                 </div>
 
             </div>

@@ -19,10 +19,9 @@ class PaymentController extends Controller
 
     public function showBilling(){
         $payment = UserService::getUserPayment();
-        if( isset($payment->message) ){
-            session()->flush();
-            return redirect('loginShow');
+        if( $payment ){
+            return view('user.billing')->with('payment' , $payment);
         }
-        return view('user.billing')->with('payment' , $payment);
+        return view('user.billing')->with('error' , 'No Last Payment Found');
     }
 }
