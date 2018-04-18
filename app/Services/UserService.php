@@ -52,6 +52,7 @@ class UserService
             'cuil' => $request['cuil'],
             'profession' => $request['profession'],
             'password' => $request['password'],
+            'client_url'=> url('doActivation')
         ];
         $response = GuzzleHttpService::processCall( '/api/store', 'POST' , $form_params, $access_token );
         $user = json_decode((string)$response->getBody());
