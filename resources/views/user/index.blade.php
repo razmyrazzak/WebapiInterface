@@ -40,11 +40,8 @@
                 @if( count( $user->latestpayment ) == 0 )
                     <a class="btn btn-primary disabled" role="button">Calculate Pension</a>
                 @else
-                    <a data-toggle="modal" data-target="#pensionModel" class="btn btn-primary disabled" role="button">Calculate Pension</a>
+                    <a data-toggle="modal" data-target="#pensionModel" class="btn btn-info btn_pention" role="button">Calculate Pension</a>
                 @endif
-        </div>
-        <div class="card-footer small text-muted">
-            <a href="{{ URL::to('showSubscription') }}" class="btn btn-info" role="button">Buy Subscription</a>
         </div>
     </div>
 
