@@ -43,6 +43,7 @@ class ActivationController extends Controller
             if(  env('APP_ENV') == 'local' ){
                 return view('activation.index')->with('msg','Password reset link has been sent')->with('local',$response );
             }
+            return view('activation.index')->with('msg','Password reset link has been sent');
         }
 
     }
