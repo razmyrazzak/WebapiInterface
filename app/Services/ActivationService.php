@@ -19,6 +19,7 @@ class ActivationService
     public static function restUser( $request ){
         $form_params = [
             'email' => $request->email,
+            'url' => url('showPasswordForm')
         ];
         $response = GuzzleHttpService::processCall( '/api/sendResetLink', 'POST' , $form_params, null );
         switch ($response->getStatusCode()) {
