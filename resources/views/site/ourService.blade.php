@@ -10,15 +10,11 @@
             </div>
         </div>
         <div class="row flat">
-            @foreach( $services as $sub)
-                @include('site.cardSite')
-            @endforeach
-
+            @if($services)
+                @foreach( $services as $sub)
+                    @include('site.cardSite')
+                @endforeach
+            @endif
         </div>
-        {{--<div class="row">--}}
-            {{--@foreach( $subs as $sub)--}}
-                {{--@include('site.cardSite')--}}
-            {{--@endforeach--}}
-        {{--</div>--}}
     </div>
 </section>
