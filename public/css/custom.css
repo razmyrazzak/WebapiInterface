@@ -188,3 +188,292 @@ span.round-tab:hover {
     color: #fff !important;
 }
 
+
+/*--  price section ---*/
+
+#price {
+    background: #ffffff;
+}
+
+.flat .plan {
+    border-radius: 0px;
+    list-style: none;
+    padding: 0 0 20px;
+    margin: 0 0 15px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.flat .plan:hover {
+    box-shadow: 0px 0px 25px 8px #F7F7F7;
+}
+
+.flat .plan li {
+    padding: 10px 15px;
+    color: #666666;
+    border-bottom: 1px solid #f5f5f5;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    text-align: left;
+    padding-left: 65px;
+}
+
+.flat .plan li:hover {
+    color: #ffffff;
+    cursor: pointer;
+    background: #3498DB;
+}
+
+.flat .plan li i.fa {
+    margin-right: 10px;
+}
+
+.flat .plan li:last-child {
+    border-bottom: none;
+}
+
+.flat .plan li:first-child {
+    border-bottom: none;
+}
+
+.flat .plan li.plan-price {
+    border-top: 0;
+    border-bottom: 3px solid #3498DB;
+    text-align: center;
+    padding-left: 0px;
+}
+
+.plan-price h3 {
+    color: #515050;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.plan-price:hover h3 {
+    color: #ffffff;
+}
+
+.currency {
+    font-size: 24px;
+    position: relative;
+    top: -18px;
+    font-weight: 400;
+}
+
+.year {
+    font-size: 16px;
+    text-transform: none;
+    margin-left: -16px;
+}
+
+.flat .plan li.plan-name {
+    border-radius: 0;
+    padding: 15px;
+    font-size: 36px;
+    line-height: 50px;
+    color: #fff;
+    background: #3498DB;
+    margin-bottom: 0px;
+    border-top: 0;
+    text-align: center;
+}
+
+.flat .plan li.plan-name p {
+    color: #fff;
+}
+
+.flat .plan li > strong {
+    color: #6B6B6B;
+    font-weight: normal;
+}
+
+.flat .plan li.plan-action {
+    margin-top: 0px;
+    margin-bottom: -20px;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.flat .plan.featured {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.flat .plan.featured:hover li.plan-name,
+.flat .plan:hover li.plan-name,
+.flat .plan.featured.plan-name {
+    background: #fff !important;
+}
+
+.btn {
+    background: #3498DB;
+    color: #fff;
+    border-radius: 0;
+    padding: 10px 40px;
+    margin: 15px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #3498DB;
+    border: 1px solid #3498DB;
+}
+
+/*footer section*/
+
+.footer {
+    background: #272727;
+    font-size: 14px;
+}
+
+.footer-widgets {
+    padding: 100px 0 10px 0;
+    border-top: 4px solid #2e2e2e;
+}
+
+.widget-footer {
+    margin-bottom: 50px;
+}
+
+.widget-footer .widget-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #CCCCCC;
+    font-weight: 400;
+    position: relative;
+}
+
+.widget-footer .widget-title:after {
+    background: #888888;
+    content: "";
+    left: 0;
+    top: 25px;
+    width: 26%;
+    height: 2px;
+    position: absolute;
+}
+
+.widget-content p {
+    color: #888888;
+    padding: 10px;
+    margin-left: -10px
+}
+
+.contacts-widget .contacts-info-list {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.contacts-widget .contacts-info-list > li {
+    position: relative;
+    padding-left: 50px;
+    min-height: 32px;
+    display: table;
+}
+
+.contacts-widget .contacts-info-list > li > .fa {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    font-size: 22px;
+    color: #CCCCCC;
+}
+
+.footer a {
+    color: #888888;
+}
+
+.info-item span {
+    color: #CCCCCC;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.contacts-widget .contacts-info-list > li .info-item {
+    color: #888888;
+    margin-bottom: 20px;
+}
+
+.social-link {
+    margin-left: -50px;
+}
+
+.social-link ul {}
+
+.social-link ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.social-link ul li a {
+    padding-left: 10px;
+    color: #888888;
+    transition: .3s;
+}
+
+.social-link ul li a:hover {
+    color: #3498DB;
+    cursor: pointer;
+}
+
+/*.form-control {*/
+/*display: block;*/
+/*width: 100%;*/
+/*height: 34px;*/
+/*padding: 6px 12px;*/
+/*font-size: 14px;*/
+/*line-height: 1.4;*/
+/*background-color: #272727;*/
+/*border: 1px solid #888888;*/
+/*border-radius: 0px;*/
+/*color: #fff;*/
+/*}*/
+
+textarea.form-control {
+    height: 75px;
+    width: 100%;
+}
+
+button.btn {
+    margin: 0px;
+    transition: all 0.5s;
+    text-transform: uppercase;
+    padding: 10px 50px;
+}
+
+button.btn:hover {
+    border: 1px solid #3498db;
+    color: #3498db;
+    background-color: #fff;
+}
+
+.footer-copyright {
+    background: #1C1C1C;
+    font-size: 16px;
+    color: #888888;
+    padding: 25px 0;
+    position: relative;
+    text-align: center;
+}
+
+.footer-copyright a {
+    color: #3498DB;
+}
+
+/*scroll top*/
+
+.scroll-to-top{
+    background: none;
+    border: 1px solid #3498db;
+}
+.fa-angle-up:before{
+    color: #3498db;
+}

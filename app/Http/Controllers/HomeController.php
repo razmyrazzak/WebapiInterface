@@ -13,7 +13,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('site.index');
+        $services = SubscribeServices::getAllSubs();
+        return view('site.index')->with('services', $services);
     }
 
     public function loginShow(Request $request)

@@ -34,7 +34,8 @@ class SubscribeServices
     }
 
     public static function getAllSubs(){
-        $response = GuzzleHttpService::processCall( '/api/getServices', 'GET', null, session('access_token') );
+        $accessToken = session('access_token')? session('access_token') : null;
+        $response = GuzzleHttpService::processCall( '/api/getServices', 'GET', null, $accessToken );
         $result = json_decode((string)$response->getBody());
         return $result;
     }

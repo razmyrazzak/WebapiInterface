@@ -40,6 +40,6 @@ Route::group(['middleware' => ['checkToken']], function() {
     Route::get('showBilling', 'PaymentController@showBilling');
 
     //Subscription
-    Route::get('showSubscription', 'SubscriptionController@showSubscription');
+//    Route::get('showSubscription', 'SubscriptionController@showSubscription');
     Route::get('generatePension', 'SubscriptionController@generatePension');
 });

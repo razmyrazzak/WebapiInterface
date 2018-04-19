@@ -1,15 +1,6 @@
 @extends('user.master')
 @section('content')
     <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{{ URL::to('pensionPage') }}">Dashboard</a>
-            </li>
-            @for($i = 0; $i <= count(Request::segments()); $i++)
-                <li class="breadcrumb-item active">{{Request::segment($i)}}</li>
-            @endfor
-        </ol>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">

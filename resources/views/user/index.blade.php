@@ -1,10 +1,6 @@
 @extends('user.master')
 @section('content')
-<div class="container-fluid">
-    <!-- Breadcrumbs-->
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active">My Dashboard</li>
-    </ol>
+<div class="container">
     @if (count($errors) > 0)
         @if($errors->has('payment'))
             <div class="alert alert-danger">
@@ -44,11 +40,12 @@
                 @endif
         </div>
     </div>
-
-    <div class="row">
-        @foreach( $subs as $sub)
-            @include('user.card')
-        @endforeach
+        {{--show subscriptions --}}
+        <div class="row flat">
+            @foreach( $subs as $sub)
+                @include('user.card')
+            @endforeach
+        </div>
 </div>
 
 @include('user.pensionModel')

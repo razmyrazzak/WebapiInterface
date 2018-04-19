@@ -14,10 +14,6 @@
                     <i class="fa fa-fw fa-history"></i>Billing</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ URL::to('showSubscription') }}">
-                    <i class="fa fa-fw fa-magic"></i>Subscriptions</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{{ URL::to('showEdit') }}">
                     <i class="fa fa-fw fa-user-circle"></i>{{session('user_name')}}</a>
             </li>

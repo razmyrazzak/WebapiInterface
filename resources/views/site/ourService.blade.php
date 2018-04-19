@@ -10,27 +10,15 @@
             </div>
         </div>
         <div class="row flat">
-
-            <div class="col-sm-4">
-                <div class="pricing-table wow fadeIn" data-wow-duration="2s" data-wow-delay=".4s">
-                    <ul class="plan">
-                        <li class="plan-name" style="<?php echo (Auth::user() && $last_payments->service_id == $service->id ? 'background: #5cb85c !important' : ''); ?>">NAME <p><i>Lorem Ipsum is not simply random</i></p></li>
-                        <li class="plan-price">
-                            <h3>
-                                <span class="currency">$</span>100/
-                                <span class="year">year</span>
-                            </h3>
-                        </li>
-
-                        {{--<li class="plan-action"> <a href="javascript:void(0)" class="btn">Current Plan</a></li>--}}
-
-                        {{--<li class="plan-action"> <a href="gfdgf" class="btn">BUY NOW</a></li>--}}
-
-                        <li class="plan-action"> <a  href="javascript:void(0)" class="btn buy_login">BUY NOW</a> </li>
-                    </ul>
-                </div>
-            </div>
+            @foreach( $services as $sub)
+                @include('site.cardSite')
+            @endforeach
 
         </div>
+        {{--<div class="row">--}}
+            {{--@foreach( $subs as $sub)--}}
+                {{--@include('site.cardSite')--}}
+            {{--@endforeach--}}
+        {{--</div>--}}
     </div>
 </section>

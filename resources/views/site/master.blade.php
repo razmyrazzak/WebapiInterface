@@ -55,6 +55,10 @@
 <script src="{{url('back-end/vendor/bootstrap-toastr/toastr.min.js')}}"></script>
 <script src="{{url('back-end/vendor/bootstrap-toastr/toastr.min.js')}}"></script>
 <script src="{{url('back-end/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+<!-- Custom fonts for this template-->
+<link href="{{url('vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+<!-- Page level plugin CSS-->
+<script src="{{url('js/sb-admin.min.js')}}"></script>
 <script src="{{url('js/custom.js')}}"></script>
 <script type="text/javascript">
     $('.video-active').mb_YTPlayer();</script>
