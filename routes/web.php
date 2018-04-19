@@ -24,6 +24,8 @@ Route::get('confirmationMsg', 'ActivationController@confirmationMsg');
 Route::get('doActivation/{activation_hash}', 'ActivationController@doActivation');
 Route::get('showRestForm', 'ActivationController@showRestForm');
 Route::post('doReset', 'ActivationController@doReset');
+Route::get('showPasswordForm/{token}', 'ActivationController@showPasswordForm');
+Route::post('doUpdatePassword/', 'ActivationController@doUpdatePassword');
 
 Route::group(['middleware' => ['checkToken']], function() {
     Route::get('pensionPage', 'HomeController@pensionPage');

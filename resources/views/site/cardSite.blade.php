@@ -12,7 +12,7 @@
                     <span class="year">year</span>
                 </h3>
             </li>
-            <li class="plan-action"> <a  href="#" class="btn buy_login">BUY NOW</a> </li>
+            <li class="plan-action"> <a  href="{{ URL::to('pensionPage') }}" class="btn buy_login">BUY NOW</a> </li>
         </ul>
     </div>
 </div>
