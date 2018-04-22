@@ -56,7 +56,6 @@ class HomeController extends Controller
             }
             return redirect('loginShow')->withErrors( $response->getReasonPhrase() );
         }
-
     }
 
 

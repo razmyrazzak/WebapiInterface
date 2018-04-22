@@ -13,7 +13,7 @@
                 </h3>
             </li>
             @inject('payLinks', 'App\Http\Controllers\SubscriptionController')
-            <li class="plan-action"> <a  href="{{$payLinks->getServices($sub->id)}}" class="btn buy_login">BUY NOW</a> </li>
+            <li class="plan-action"> <a  href="@if ($serverid != $sub->id ) {{$payLinks->getServices($sub->id)}} @endif" class="btn buy_login @if ($serverid == $sub->id ) disabled @endif">BUY NOW</a> </li>
         </ul>
     </div>
 </div>

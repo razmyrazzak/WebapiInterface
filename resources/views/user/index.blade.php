@@ -27,15 +27,17 @@
                 <div class="alert alert-info">
                     <strong>Info!</strong> Currently you don't  have any Subscriptions Please buy Calculate Pension
                 </div>
-            @elseif(  session('pension') )
-                <div class="alert alert-success">
-                    <label>Pension Amount:</label>
-                    <strong>{{session('pension')}}</strong>
-                </div>
             @endif
                 @if( count( $user->latestpayment ) == 0 )
                     <a class="btn btn-primary disabled" role="button">Calculate Pension</a>
                 @else
+                    @foreach( $user->latestpayment as $latestpayment )
+                        @php( $serverid = $latestpayment->id  )
+                    <div class="alert alert-success">
+                        <label>Pension Amount:</label>
+                        <strong> ${{$latestpayment->pension}}</strong>
+                    </div>
+                    @endforeach
                     <a data-toggle="modal" data-target="#pensionModel" class="btn btn-info btn_pention" role="button">Calculate Pension</a>
                 @endif
         </div>
