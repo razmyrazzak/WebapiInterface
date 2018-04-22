@@ -15,13 +15,7 @@ class UserService
     public static function getUserDetails(){
         $access_token = session('access_token');
         $response = GuzzleHttpService::processCall( '/api/getCurrentUser', 'GET' , null, $access_token );
-        $user = json_decode((string)$response->getBody());
-        if(isset($user->message)){
-            return $user;
-        }
-        $userData =  session('user');
-        session(['user_name' => $user->first_name]);
-        return $user;
+        return $response;
     }
 
     public static function updateUser( $request ){

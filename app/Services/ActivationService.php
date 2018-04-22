@@ -38,8 +38,6 @@ class ActivationService
             default :
                 return ['error' => 'something went wrong' ];
         }
-        $response = json_decode((string)$response->getBody());
-        return $response;
     }
 
     /**
