@@ -19,13 +19,14 @@
     @endif
 
     <div class="card mb-3">
+        @php( $serverid = ''  )
         <div class="card-header">
             <i class="fa fa-area-chart"></i>Calulated Pension
         </div>
         <div class="card-body">
             @if( !$user->latestpayment )
                 <div class="alert alert-info">
-                    <strong>Info!</strong> Currently you don't  have any Subscriptions Please buy Calculate Pension
+                    <strong>Info!</strong> Currently you don't have any Subscriptions Please buy to Calculate Pension
                 </div>
             @endif
                 @if( count( $user->latestpayment ) == 0 )
@@ -42,7 +43,7 @@
                 @endif
         </div>
     </div>
-        {{--show subscriptions --}}
+        {{--show subscriptions--}}
         <div class="row flat">
             @foreach( $subs as $sub)
                 @include('user.card')
