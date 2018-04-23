@@ -34,12 +34,15 @@ Route::group(['middleware' => ['checkToken']], function() {
     //user CRUD
     Route::get('showEdit', 'UserController@showEdit');
     Route::post('editUser', 'UserController@editUser');
+    Route::get('passwordForm', 'UserController@passwordForm');
+    Route::post('updatePassword', 'UserController@updatePassword');
 
 
     //user payment
     Route::get('createPayment', 'PaymentController@createPayment');
     Route::get('failPayment', 'PaymentController@failPayment');
     Route::get('showBilling', 'PaymentController@showBilling');
+
 
     //Subscription
 //    Route::get('showSubscription', 'SubscriptionController@showSubscription');

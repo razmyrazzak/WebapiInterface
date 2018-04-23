@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function store(){
-
-    }
 
     public function showEdit(){
         $response = UserService::getUserDetails();
@@ -33,7 +30,6 @@ class UserController extends Controller
             'cuil' => 'required',
             'email' => 'email|required',
             'profession' => 'required',
-
         ]);
         $result = UserService::updateUser( $request );
         if( $result ){
@@ -70,7 +66,25 @@ class UserController extends Controller
             return view('activation.index')->with('msg','User created please Activate your account')->with('local', $response->token);
         }
         return view('activation.index')->with('msg','User created please Activate your account');
+    }
 
+    public function passwordForm(){
+        return view('user.passwordForm');
+    }
+
+    public function updatePassword( Request $request ){
+        $this->validate($request, [
+            'current_password' => 'required',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required|min:8'
+        ]);
+        $response = UserService::updatePassword( $request );
+        if( $response->getStatusCode() == 200 ){
+            return redirect('passwordForm')->with('status', 'password changed');
+        }
+        elseif ( $response->getStatusCode() == 500 || 401 || 422 ){
+            return redirect('passwordForm')->with('error', json_decode((string)$response->getBody()) );
+        }
     }
 
 

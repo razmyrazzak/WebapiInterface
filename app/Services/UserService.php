@@ -69,8 +69,17 @@ class UserService
             return $response ;
         }
         return $response;
+    }
 
-
+    public static function updatePassword( $request ){
+        $access_token = session('access_token');
+        $form_params = [
+            'current_password' => $request->current_password,
+            'password' => $request->password,
+            'password_confirmation' => $request->password_confirmation,
+        ];
+        $response = GuzzleHttpService::processCall( '/api/updatePassword', 'POST' , $form_params, $access_token );
+        return $response;
     }
 
 }
