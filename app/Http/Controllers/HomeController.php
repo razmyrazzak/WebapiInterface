@@ -34,10 +34,11 @@ class HomeController extends Controller
 
         $service = LoginService::doLogin($request);
         if( $service ){
-            return redirect('loginShow')->withErrors( $service['msg'] );
+            return redirect('pensionPage');
+
         }
         elseif(isset($service['code'])){
-            return redirect('pensionPage');
+            return redirect('loginShow')->withErrors( $service['msg'] );
         }
     }
 
@@ -46,6 +47,7 @@ class HomeController extends Controller
         $response = UserService::getUserDetails();
         if($response->getStatusCode()== 200){
             $user = json_decode((string)$response->getBody());
+            session(['user_name' => $user->first_name]);
             $subs = SubscribeServices::getAllSubs();
             return view( 'user.index' )->with('user',$user)->with('subs', $subs);
         }

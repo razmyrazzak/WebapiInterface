@@ -8,7 +8,7 @@
                         <i class="fa fa-fw fa-user"></i>Update User
                     </div>
                     <div class="card-body">
-                        {!! Form::open( array( 'url'=>'editUser', 'method' => 'GET' ) ) !!}
+                        {!! Form::open( array( 'url'=>'editUser', 'method' => 'POST' ) ) !!}
                         <label for="exampleInputName">First name</label>
                         <small class="{{ $errors->has('first_name') ? ' text-danger' : '' }}">{{ $errors->first('first_name') }}</small>
                         {!! Form::text( 'first_name', $user->first_name, array( 'class' => 'form-control','placeholder' => 'Enter first name' ) ) !!}

@@ -33,7 +33,7 @@ Route::group(['middleware' => ['checkToken']], function() {
 
     //user CRUD
     Route::get('showEdit', 'UserController@showEdit');
-    Route::get('editUser', 'UserController@editUser');
+    Route::post('editUser', 'UserController@editUser');
 
 
     //user payment

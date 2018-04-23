@@ -12,8 +12,17 @@ class UserController extends Controller
     }
 
     public function showEdit(){
-        $user = UserService::getUserDetails();
-        return view('user.edit')->with( 'user', $user );
+        $response = UserService::getUserDetails();
+        if($response->getStatusCode()== 200){
+            $user = json_decode((string)$response->getBody());
+            return view( 'user.edit' )->with('user',$user);
+        }
+        elseif ( $response->getReasonPhrase() ){
+            if($response->getStatusCode()== 401){
+                session()->flush();
+            }
+            return redirect('loginShow')->withErrors( $response->getReasonPhrase() );
+        }
     }
 
     public function editUser( Request $request ){
@@ -28,9 +37,9 @@ class UserController extends Controller
         ]);
         $result = UserService::updateUser( $request );
         if( $result ){
-            return redirect('editUser');
+            return redirect('showEdit');
         }
-        return redirect('editUser')->withErrors(array('user' => 'Something went wrong.'));
+        return redirect('showEdit')->withErrors(array('user' => 'Something went wrong.'));
     }
 
     public function registerUser( Request $request ){
